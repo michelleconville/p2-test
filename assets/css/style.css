@@ -372,7 +372,11 @@ h1 {
   text-transform: uppercase;
 }
 
-
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .container-nav {
   display: flex;
@@ -395,6 +399,7 @@ nav ul {
   list-style: none;
   padding: 0;
   display: flex;
+
 }
 
 nav li {
@@ -407,11 +412,4 @@ nav a {
   color: #003B4A;
 }
 
-nav a:hover,
-nav a:focus {
-  color: #412234;
-}
 
-.active-page {
-  border-bottom: 1px solid #412234;
-}
