@@ -184,7 +184,8 @@ p {
   margin: 20px 150px;
   border: 0.8em solid #DBFCFF;
   padding: 20px 40px;
-  border-radius: 20px;
+  border-radius: 10px;
+  color: #DBFCFF;
 }
 
 /* The Modal Close Buttons */
@@ -342,11 +343,6 @@ p {
 
   .modal-content {
     padding: 20px;
-  }
-
-  .modal-img {
-    margin: 1em 0 1em;
-    width: 10em;
   }
 
   .close {
