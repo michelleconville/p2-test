@@ -281,6 +281,23 @@ p {
   .hero-btn {
     font-size: 14px;
   }
+
+  .container {
+    text-align: center;
+}
+
+.container-nav {
+    flex-direction: column;
+}
+
+nav ul {
+    flex-direction: column;
+}
+
+nav li {
+    margin: 0.8em 0;
+}
+
 }
 
 /* tablet size */
@@ -412,3 +429,23 @@ nav a {
 }
 
 
+/* Media Queries for Header */
+@media (max-width: 999px) {
+  .footer-col {
+      width: 100%;
+  }
+
+  .container {
+      text-align: center;
+  }
+
+  .container-nav {
+      flex-direction: column;
+  }
+
+  #flavour-image {
+      background-image: none;
+      width: 0;
+  }
+
+}
