@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Memory card flip game with an under the sea theme">
+    <meta name="keywords" content="memory game, flip card memory game, flip card game, game, flip card">
+    <meta name="author" content="Michelle Conville ">
+
+    <!-- style sheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Under the Sea | Memory Game</title>
+
 </head>
+
+
+
 <body>
-    
+    <header>
+        <div class="container container-nav">
+            <div class="page-title">
+                <a href="index.html" role="navigation" aria-label="Main">
+                    <h1><i class="fas fa-cookie-bite"></i> Under the Sea</h1>
+                </a>
+            </div>
+            <!-- Navigation bar -->
+            <nav>
+                <ul>
+                    <li><a id="modalBtn">Rules</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <main>
+        <form>
+            <p>Please leave some feedback about the game.</p>
+            <div>
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email"
+                    aria-describedby="emailHelp" required>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                </div>
+            </div>
+            <div>
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" name="message" required></textarea>
+            </div>
+            <button id="submit" type="submit" class="my-btn btn btn-primary">Submit</button>
+           
+        </form>
+    </main>
+
+
+
+
+
+
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
