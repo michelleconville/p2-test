@@ -363,3 +363,55 @@ p {
 #span {
   color: #DBFCFF;
 }
+
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #203647;
+  text-transform: uppercase;
+}
+
+
+
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  background-color: #DBFCFF;
+  padding: 0.8em 0;
+  box-shadow: 2px 2px 10px white;
+}
+
+header a {
+  text-decoration: none;
+}
+
+/* styling the nav bar */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 3em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: #003B4A;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #412234;
+}
+
+.active-page {
+  border-bottom: 1px solid #412234;
+}
