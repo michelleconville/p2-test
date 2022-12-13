@@ -1,0 +1,365 @@
+/* google fonts used */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(#4DA8DA, #12232e);
+}
+
+.page-title {
+  color: #DBFCFF;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 4em;
+}
+
+.game-info-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.game-info {
+  color: #DBFCFF;
+  font-family: 'Hind', sans-serif;
+  font-size: 2em;
+}
+
+.game-container {
+  margin: 5px 0 10px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 5px;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.memory-card {
+  position: relative;
+  cursor: pointer;
+  height: 75px;
+  width: 75px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+.memory-card:active {
+  transform: scale(.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  background: #203647;
+  border-radius: 10px;
+  border-width: .2px;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+}
+
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #12232e;
+  border: 1px solid #12232e;
+  padding: 12px 34px;
+  font-size: 14px;
+  background: #DBFCFF;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.hero-btn:hover {
+  border: 1px solid #DBFCFF;
+  background: #2376b9;
+  color: #0d0d2f;
+  text-decoration: none;
+  transition: 1s;
+}
+
+/* How to play instructions */
+
+.instructions {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rules-card {
+  font-family: 'Hind', sans-serif;
+  border: 0.8em solid #DBFCFF;
+  background-color: #12232e;
+  border-radius: 20px;
+  margin: 100px 500px 100px;
+  padding: 500px;
+  justify-content: center;
+}
+
+.rules-list {
+  font-weight: 300;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.rules-list li {
+  font-family: 'Hind', sans-serif;
+  margin-bottom: 25px;
+  color: #DBFCFF;
+  text-align: center;
+}
+
+.good-luck {
+  font-family: 'Hind', sans-serif;
+  color: #DBFCFF;
+  text-align: center;
+}
+
+/* game-over modal */
+
+.modal {
+  /*Hidden by default */
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  font-size: 120%;
+  padding-bottom: 20px;
+}
+
+/* Modal Content Box */
+
+.modal-content {
+  font-family: 'Hind', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #12232e;
+  margin: 20px 150px;
+  border: 0.8em solid #DBFCFF;
+  padding: 20px 40px;
+  border-radius: 20px;
+}
+
+/* The Modal Close Buttons */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/align-self */
+
+.close {
+  align-self: flex-end;
+  color: #DBFCFF;
+  font-size: 3em;
+}
+
+.close:hover,
+.close:focus {
+  color: #DBFCFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Image*/
+
+.modal-img {
+  display: inline-block;
+  margin: 1em 0 1em;
+  width: 15em;
+}
+
+
+/* Media Queries */
+/* for extra small devices */
+@media only screen and (max-width: 600px) {
+  .instructions-modal {
+    margin: 0;
+  }
+
+  .rules-card {
+    margin: 5px 15px 15px;
+    padding: 0 20px 10px;
+  }
+
+  .modal {
+    margin: 0;
+  }
+
+  .modal-content {
+    margin: 20px 20px 40px;
+    padding: 20px;
+  }
+
+  .modal-img {
+    width: 10em;
+  }
+
+  p {
+    font-size: 16px;
+    padding-bottom: 20px
+  }
+
+  .close {
+    font-size: 2.5em;
+    padding-bottom: 20px;
+  }
+
+  .page-title {
+    margin: 10px;
+    font-size: 2.5em;
+  }
+
+  .game-info-container {
+    padding: 0 15px;
+    font-size: 10px;
+  }
+
+  .game-info {
+    font-size: 2em;
+  }
+
+  .game-container {
+    width: 100vw;
+    grid-gap: 5px;
+    margin: 50px auto;
+  }
+
+  .memory-card {
+    height: 70px;
+    width: 70px;
+  }
+
+  .card-front,
+  .card-back {
+    padding: 3px;
+  }
+
+  .hero-btn {
+    font-size: 14px;
+  }
+}
+
+/* tablet size */
+@media (min-width: 768px) {
+  .game-container {
+    margin: 10px 0 40px;
+  }
+
+  .page-title {
+    font-size: 4em;
+    margin: 40px 20px;
+  }
+
+  .rules-card {
+    margin: 10px 50px 10px;
+    padding: 50px;
+  }
+}
+
+
+/* media for larger screens */
+@media (min-width: 1400px) {
+  .page-title {
+    margin: 10px;
+    font-size: 6em;
+  }
+
+  .game-info-container {
+    padding: 0 20px;
+  }
+
+  .game-container {
+    margin: 50px 0 50px;
+  }
+
+  .game-info {
+    color: #DBFCFF;
+    font-size: 2em;
+  }
+
+  .memory-card {
+    height: 100px;
+    width: 100px;
+  }
+
+  .card-front,
+  .card-back {
+    padding: 5px;
+    border-width: 1px;
+  }
+
+  .hero-btn {
+    padding: 12px 34px;
+    font-size: 20px;
+  }
+
+  .modal {
+    padding: 0 350px;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-img {
+    margin: 1em 0 1em;
+    width: 10em;
+  }
+
+  .close {
+    font-size: 2.5em;
+    padding-bottom: 20px;
+  }
+
+  .rules-card {
+    margin: 100px 500px 100px;
+    padding: 50px;
+  }
+}
+
+#span {
+  color: #DBFCFF;
+}

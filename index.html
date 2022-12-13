@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Memory card flip game with an under the sea theme">
+  <meta name="keywords" content="memory game, flip card memory game, flip card game, game, flip card">
+  <meta name="author" content="Michelle Conville ">
+
+  <!-- style sheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>Under the Sea | Memory Game</title>
+
+</head>
+
+
+
+<body>
+
+
+  <h1 class="page-title">Under the Sea</h1>
+  <!-- Memory game grid -->
+  <div class="game-container">
+    <div class="game-info-container">
+      <div onclick="flipcard()" class="game-info">
+        <span class="timer">Timer 0:00</span>
+      </div>
+      <div class="game-info"> Moves
+        <span class="moves">0</span>
+      </div>
+    </div>
+
+    <div class="memory-card" data-image="seacreature-1">
+      <img class="card-front" src="assets/images/Final/seacreature-1.JPG" alt="seacreature 1">
+      <div class="card-back"></div>
+    </div>
+
+    <div class="memory-card" data-image="seacreature-2">
+        <img class="card-front" src="assets/images/Final/seacreature-2.JPG" alt="seacreature 2">
+        <div class="card-back"></div>
+      </div>
+
+      <div class="memory-card" data-image="seacreature-3">
+        <img class="card-front" src="assets/images/Final/seacreature-3.JPG" alt="seacreature 3">
+        <div class="card-back"></div>
+      </div>
+
+      <div class="memory-card" data-image="seacreature-4">
+        <img class="card-front" src="assets/images/Final/seacreature-4.JPG" alt="seacreature 4">
+        <div class="card-back"></div>
+      </div>
+
+      <div class="memory-card" data-image="seacreature-5">
+        <img class="card-front" src="assets/images/Final/seacreature-5.JPG" alt="seacreature 5">
+        <div class="card-back"></div>
+      </div>
+
+      <div class="memory-card" data-image="seacreature-6">
+        <img class="card-front" src="assets/images/Final/seacreature-6.JPG" alt="seacreature 6">
+        <div class="card-back"></div>
+      </div>
+
+      <div class="memory-card" data-image="seacreature-7">
+        <img class="card-front" src="assets/images/Final/seacreature-7.JPG" alt="seacreature 7">
+        <div class="card-back"></div>
+      </div>
+
+      <div class="memory-card" data-image="seacreature-8">
+        <img class="card-front" src="assets/images/Final/seacreature-8.JPG" alt="seacreature 8">
+        <div class="card-back"></div>
+      </div>
+
+      <div class="memory-card" data-image="seacreature-1">
+        <img class="card-front" src="assets/images/Final/seacreature-1.JPG" alt="seacreature 1">
+        <div class="card-back"></div>
+      </div>
+  
+      <div class="memory-card" data-image="seacreature-2">
+          <img class="card-front" src="assets/images/Final/seacreature-2.JPG" alt="seacreature 2">
+          <div class="card-back"></div>
+        </div>
+  
+        <div class="memory-card" data-image="seacreature-3">
+          <img class="card-front" src="assets/images/Final/seacreature-3.JPG" alt="seacreature 3">
+          <div class="card-back"></div>
+        </div>
+  
+        <div class="memory-card" data-image="seacreature-4">
+          <img class="card-front" src="assets/images/Final/seacreature-4.JPG" alt="seacreature 4">
+          <div class="card-back"></div>
+        </div>
+  
+        <div class="memory-card" data-image="seacreature-5">
+          <img class="card-front" src="assets/images/Final/seacreature-5.JPG" alt="seacreature 5">
+          <div class="card-back"></div>
+        </div>
+  
+        <div class="memory-card" data-image="seacreature-6">
+          <img class="card-front" src="assets/images/Final/seacreature-6.JPG" alt="seacreature 6">
+          <div class="card-back"></div>
+        </div>
+  
+        <div class="memory-card" data-image="seacreature-7">
+          <img class="card-front" src="assets/images/Final/seacreature-7.JPG" alt="seacreature 7">
+          <div class="card-back"></div>
+        </div>
+  
+        <div class="memory-card" data-image="seacreature-8">
+          <img class="card-front" src="assets/images/Final/seacreature-8.JPG" alt="seacreature 8">
+          <div class="card-back"></div>
+        </div>
+  </div>
+
+  <!-- Reset Game again -->
+  <div>
+    <button class="hero-btn" onclick="reset()">Reset Game</button> <button id="modalBtn" class="hero-btn">How to
+      Play</button>
+  </div>
+
+  <!--instructions Modal -->
+  <section>
+    <div class="instructions" id="instructions">
+      <div>
+      </div>
+      <div>
+        <div class="rules-card">
+          <div class="card-body">
+            <div><h2 class="good-luck">How to play:</h2></div>
+            <ol class="rules-list">
+              <li>To begin the game, click on any card to flip it over</li>
+              <li>Only two cards at a time can be flipped</li>
+              <li>You need to find all 8 pairs to complete the game.</li>
+              <li>Restart the game and try beat your time or the number of moves taken!</li>
+            </ol>
+            <p class="good-luck"><strong>GOOD LUCK!</strong></p>
+          </div><span id="closeBtn" class="hero-btn">Play!</span>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Win Message Modal -->
+  <section class="win-msg">
+    <div class="modal" id="modal">
+      <!-- modal content -->
+      <div class="modal-content">
+        <span id="close" class="close">&times;</span>
+        <h2>Well Done!</h2>
+        <br>
+        <p>You have won!</p>
+        <p>You made <span id="finalMove"> </span> moves </p>
+        <p>in the <span id="totalTime"> </span> </p>
+        <img class="modal-img" src="./assets/images/thumbs-up.png" alt="Thumbs up smiley face">
+      </div>
+    </div>
+  </section>
+
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
