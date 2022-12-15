@@ -4,11 +4,16 @@
  const cards = document.querySelectorAll('.memory-card');
  const moveContainer = document.querySelector(".moves");
  const instructions = document.getElementById('instructions');
+ const rules = document.getElementById('rules');
  const modal = document.getElementById('modal');
  const timeContainer = document.querySelector(".timer");
  const MAX_MATCH = 8;
  const modalBtn = document.getElementById("modalBtn");
  const closeBtn = document.getElementById("closeBtn");
+ const otherBtn = document.getElementById("otherBtn");
+ const allBtn = document.getElementById("allBtn");
+
+ 
  
  let gameOn = false;
  let perfectMatch = 0;
@@ -33,6 +38,22 @@
  function closeInstructions() {
      instructions.style.display = "none";
  }
+
+ otherBtn.addEventListener('click', showRules); // listen for open click of how to play instructions modal
+ allBtn.addEventListener('click', closeRules); // listen for close instructions button
+ 
+ function showRules() {
+    rules.style.display = "block";
+}
+
+function closeRules() {
+    rules.style.display = "none";
+}
+
+
+
+
+
  
  /*
  onclick function for cards, add flip class for css effects
@@ -43,21 +64,21 @@
          gameOn = true;
          timer();
      }
-     if (lockBoard) return; // return is lockBoard is true so the rest of the function wont be executed
+     if (lockBoard) return; 
      if (this === firstCard) return;
  
-     this.classList.add('flip'); //if valid, flips card using css class
+     this.classList.add('flip'); 
  
-     if (!flippedCard) { // The first card clicked
+     if (!flippedCard) { 
  
          flippedCard = true;
-         firstCard = this; //stores this as first card
+         firstCard = this; 
  
          return;
  
      }
  
-     secondCard = this; //The second card clicked
+     secondCard = this; 
  
      checkCardMatch();
  }
@@ -172,7 +193,7 @@
  }
  
  // New Game Button 
- function reset() {
+ function restart() {
      setTimeout(() => {
          flippedCard = false;
          [firstCard, secondCard] = [null, null];
@@ -191,3 +212,4 @@
      }, 500);
  
  }
+
